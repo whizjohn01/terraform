@@ -3,6 +3,18 @@ provider "aws" {
 
 }
 
+
+resource "aws_instance" "manifest1" {
+  ami           = "ami-0729e439b6769d6ab"
+  instance_type = "t2.micro"
+
+tags = {
+
+    # First instance
+    Name = "manifest1"
+}
+}
+
 resource "aws_instance" "manifest2" {
 count = 20 #Create 20 identical instances
 
